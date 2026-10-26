@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordly Dictionary</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <h1>Wordly</h1>
+        <p>Discover the meaning of any word.</p>
+
+        <form id="searchForm">
+            <input
+                type="text"
+                id="wordInput"
+                placeholder="Enter a word"
+                aria-label="Word to search"
+            >
+            <button type="submit">Search</button>
+        </form>
+
+        <p id="status" aria-live="polite"></p>
+        <section id="result"></section>
+
+        <section class="saved-section">
+            <h2>My Saved Words</h2>
+            <ul id="savedWords"></ul>
+        </section>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>

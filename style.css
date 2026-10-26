@@ -1,0 +1,90 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: aliceblue;
+    color: #222;
+    margin: 0;
+    padding: 30px 15px;
+}
+
+.container {
+    max-width: 650px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+h1 {
+    color: indigo;
+    text-align: center;
+}
+
+h2 {
+    color: indigo;
+}
+
+form {
+    display: flex;
+    gap: 10px;
+}
+
+input {
+    flex: 1;
+    min-width: 0;
+    padding: 12px;
+    border: 1px solid gray;
+    border-radius: 6px;
+}
+
+button {
+    padding: 12px;
+    background-color: indigo;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: darkslateblue;
+}
+
+#status {
+    color: darkred;
+}
+
+#result {
+    margin-top: 20px;
+    overflow-wrap: anywhere;
+}
+
+.word-card {
+    border-top: 1px solid lightgray;
+    padding: 15px 0;
+}
+
+.saved-section {
+    margin-top: 30px;
+    border-top: 1px solid lightgray;
+    padding-top: 15px;
+}
+
+#savedWords li {
+    margin: 10px 0;
+}
+
+#savedWords button {
+    margin-left: 8px;
+    padding: 6px 10px;
+}
+
+@media (max-width: 450px) {
+    form {
+        flex-direction: column;
+    }
+
+    .container {
+        padding: 18px;
+    }
+}
