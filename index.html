@@ -6,31 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wordly Dictionary</title>
     <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
 </head>
 <body>
-    <main class="container">
+    <header>
         <h1>Wordly</h1>
-        <p>Discover the meaning of any word.</p>
+        <p>Your simple English dictionary</p>
+        <button id="themeButton" type="button">Change Theme</button>
+    </header>
 
+    <main>
         <form id="searchForm">
+            <label for="wordInput">Enter a word</label>
             <input
                 type="text"
                 id="wordInput"
-                placeholder="Enter a word"
-                aria-label="Word to search"
+                placeholder="e.g. happy"
+                required
             >
-            <button type="submit">Search</button>
+            <button type="submit" id="searchButton">Search</button>
         </form>
 
-        <p id="status" aria-live="polite"></p>
-        <section id="result"></section>
+        <p id="status" role="status"></p>
 
-        <section class="saved-section">
-            <h2>My Saved Words</h2>
+        <section id="result" aria-live="polite"></section>
+
+        <section>
+            <h2>Saved Words</h2>
             <ul id="savedWords"></ul>
         </section>
     </main>
 
-    <script src="main.js"></script>
+    <footer>
+        <p>Wordly Dictionary App</p>
+    </footer>
 </body>
 </html>
