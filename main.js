@@ -2,7 +2,7 @@
 const searchForm = document.querySelector("#searchForm");
 const wordInput = document.querySelector("#wordInput");
 const result = document.querySelector("#result");
-const status = document.querySelector("#status");
+const statusMessage = document.querySelector("#status");
 const savedWords = document.querySelector("#savedWords");
 
 // Gets the saved words from the browser. If there are none, it starts with an empty list.
@@ -40,12 +40,12 @@ searchForm.addEventListener("submit", function(event) {
     const word = wordInput.value.trim(); // wordInput.value gets what the user typed. And .trim() removes extra spaces in the beginning and the end.
 
     if (word === "") { // if checks something
-        status.textContent = "Please enter a word."; // Displays a message if no word was entered.
+        statusMessage.textContent = "Please enter a word."; // Displays a message if no word was entered.
         result.textContent = "";
         return; // return stops the function so that it doesn't continue searching.
     }
 
-    status.textContent = "Searching..."; // Shows a message while waiting for the answer.
+    statusMessage.textContent = "Searching..."; // Shows a message while waiting for the answer.
     result.textContent = "";
 
     const url = "https://api.dictionaryapi.dev/api/v2/entries/en/" + encodeURIComponent(word); // Builds the dictionary address using the word entered by the user.
@@ -60,7 +60,7 @@ searchForm.addEventListener("submit", function(event) {
         })
 
         .then(function(data) { // Holds the information from the dictionary.
-            status.textContent = "";
+            statusMessage.textContent = "";
 
             const entry = data[0];
             const definition = entry.meanings[0].definitions[0].definition;
@@ -127,9 +127,9 @@ searchForm.addEventListener("submit", function(event) {
                     words.push(entry.word);
                     localStorage.setItem("savedWords", JSON.stringify(words));
                     displaySavedWords();
-                    status.textContent = "Word saved!";
+                    statusMessage.textContent = "Word saved!";
                 } else {
-                    status.textContent = "This word is already saved.";
+                    statusMessage.textContent = "This word is already saved.";
                 }
             });
 
@@ -138,7 +138,7 @@ searchForm.addEventListener("submit", function(event) {
         })
 
         .catch(function(error) {
-            status.textContent = "Word not found. Please try another word.";
+            statusMessage.textContent = "Word not found. Please try another word.";
             result.textContent = "";
         });
 });
